@@ -43,11 +43,12 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/contacts': {
+            '^/api/contacts': {
                 target,
                 secure: false
             }
         },
+
         port: 5173,
         https: {
             key: fs.readFileSync(keyFilePath),

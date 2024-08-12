@@ -7,7 +7,21 @@ namespace Contacts.Server
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
+
+            // Configure CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
 
             var app = builder.Build();
 
@@ -16,6 +30,8 @@ namespace Contacts.Server
 
             // Configure the HTTP request pipeline.
             app.UseHttpsRedirection();
+
+            app.UseCors(); // Enable CORS
 
             app.UseAuthorization();
 

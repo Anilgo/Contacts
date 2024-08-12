@@ -1,1 +1,13 @@
-﻿
+﻿@Contacts.Server_HostAddress = https://localhost:5173
+
+GET {{Contacts.Server_HostAddress}}/api/contacts
+
+###
+
+GET {{Contacts.Server_HostAddress}}/api/contacts
+
+###
+
+GET {{Contacts.Server_HostAddress}}/contacts
+
+###
