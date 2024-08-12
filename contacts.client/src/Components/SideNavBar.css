@@ -1,13 +1,13 @@
-.side-nav-bar {
+
     .side-nav-bar {
       position: fixed;
       top: 0;
       left: 0;
-      width: 220px; /* Adjust based on the desired width */
+      width: 220px; 
       height: 100%;
       background-color: #343a40;
       color: white;
-      padding-top: 70px; /* Adjust based on the height of the top search bar */
+      padding-top: 70px; 
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       z-index: 1000;
     }
@@ -22,14 +22,15 @@
     .side-nav-bar a:hover {
       background-color: #495057;
     }
-  position: fixed;
-  top: 50px; /* Adjust based on the height of the top search bar */
-  left: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #343a40;
-  color: white;
-  padding-top: 20px;
+.side-nav-bar {
+    position: fixed;
+    top: 50px; /* Adjust based on the height of the top search bar */
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
 }
 
 .side-nav-bar ul {

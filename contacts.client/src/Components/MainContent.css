@@ -17,6 +17,12 @@
   text-align: left;
   padding: 10px 0;
 }
+.table tr:hover {
+  color:aqua;
+  cursor: pointer;
+}
+
+
 
 @media (max-width: 1200px) {
   .table th:nth-child(4),

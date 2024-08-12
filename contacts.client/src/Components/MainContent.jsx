@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MainContent.css';
-import ContactDetails from './ContactDetails';
 
 const MainContent = ({ searchTerm }) => {
     const [contacts, setContacts] = useState([]);
-    const [selectedContact, setSelectedContact] = useState(null);
     const [selectedContacts, setSelectedContacts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         populateContactData();
@@ -43,15 +43,15 @@ const MainContent = ({ searchTerm }) => {
         }
     };
 
+    const handleContactClick = (contact) => {
+        navigate(`/contact/${contact.email}`);
+    };
+
     const filteredContacts = searchTerm
         ? contacts.filter(contact =>
             contact.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
         : contacts;
-
-    if (selectedContact) {
-        return <ContactDetails contact={selectedContact} onBack={() => setSelectedContact(null)} />;
-    }
 
     return (
         <div className="main-content">
@@ -79,11 +79,11 @@ const MainContent = ({ searchTerm }) => {
                                     onChange={() => handleSelectContact(contact)}
                                     className="select-checkbox"
                                 />
-                                <span onClick={() => setSelectedContact(contact)}>{contact.name}</span>
+                                <span onClick={() => handleContactClick(contact)}>{contact.name}</span>
                             </td>
-                            <td onClick={() => setSelectedContact(contact)}>{contact.phoneNumber}</td>
-                            <td onClick={() => setSelectedContact(contact)}>{contact.email}</td>
-                            <td onClick={() => setSelectedContact(contact)}>{contact.company}</td>
+                            <td onClick={() => handleContactClick(contact)}>{contact.phoneNumber}</td>
+                            <td onClick={() => handleContactClick(contact)}>{contact.email}</td>
+                            <td onClick={() => handleContactClick(contact)}>{contact.company}</td>
                         </tr>
                     ))}
                 </tbody>

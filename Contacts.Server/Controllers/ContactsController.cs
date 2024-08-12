@@ -42,7 +42,7 @@ namespace YourNamespace.Controllers
         public IActionResult Post([FromBody] Contact contact)
         {
             Contacts.Add(contact);
-            return CreatedAtAction(nameof(Get), new { id = contact.Name }, contact);
+            return Ok(contact);
         }
     }
 }
