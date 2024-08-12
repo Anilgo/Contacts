@@ -3,26 +3,12 @@
 }
 
 .main-area {
-  margin-left: 220px; /* Adjust based on the width of the side nav bar */
-  width: calc(100% - 220px);
+  margin-left: 20px; /* Adjust based on the width of the side nav bar */
+  width: calc(100% - 20px);
   display: flex;
   flex-direction: column;
 }
 
-.top-search-bar {
-  position: fixed;
-  top: 0;
-  left: 220px; /* Adjust based on the width of the side nav bar */
-  right: 0;
-  height: 70px; /* Adjust based on the desired height */
-  background-color: #f8f9fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
 
 .main-content {
   margin-top: 70px; /* Adjust based on the height of the top search bar */

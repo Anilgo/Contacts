@@ -1,9 +1,9 @@
 .top-search-bar {
   position: fixed;
   top: 0;
-  left: 220px; /* Adjust based on the width of the side nav bar */
+  left: 0px; /* Adjust based on the width of the side nav bar */
   right: 0;
-  height: 70px; /* Adjust based on the desired height */
+  height: 50px; /* Adjust based on the desired height */
   background-color: #f8f9fa;
   display: flex;
   align-items: center;

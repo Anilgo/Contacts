@@ -1,13 +1,21 @@
 .main-content {
-  margin-left: 220px; /* Adjust based on the width of the side nav bar */
-  margin-top: 70px; /* Adjust based on the height of the top search bar */
+  margin-left: 220px;
+  margin-top: 70px; 
   padding: 20px;
   overflow-x: auto;
+  overflow-y: auto;
 }
 
 .table {
   width: 100%;
   table-layout: fixed;
+  border-spacing: 5;
+}
+.table th{
+  font-weight: 1500;
+  text-align: left;
+  padding: 10px 0;
+
 }
 
 @media (max-width: 1200px) {
