@@ -1,22 +1,24 @@
 .main-content {
   margin-left: 220px;
-  margin-top: 70px; 
-  padding: 20px;
+  margin-top: 50px; 
   overflow-x: auto;
   overflow-y: auto;
 }
 
 .table {
-  width: 100%;
+  width: 80%;
+  height: 100%;
   table-layout: fixed;
-  border-spacing: 5;
+  border-spacing: 2px;
+
 }
-.table th{
+
+.table th {
   font-weight: 1500;
   text-align: left;
   padding: 10px 0;
-
 }
+
 
 @media (max-width: 1200px) {
   .table th:nth-child(4),

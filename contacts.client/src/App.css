@@ -6,12 +6,12 @@
   margin-left: 20px; /* Adjust based on the width of the side nav bar */
   width: calc(100% - 20px);
   display: flex;
-  flex-direction: column;
+ 
+  
 }
 
-
 .main-content {
-  margin-top: 70px; /* Adjust based on the height of the top search bar */
+  margin-top: 20px; /* Reduced margin to move content closer to the top */
   padding: 20px;
   overflow-x: auto;
 }
