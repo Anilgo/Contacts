@@ -10,7 +10,6 @@
   height: 100%;
   table-layout: fixed;
   border-spacing: 2px;
-
 }
 
 .table th {
@@ -18,7 +17,6 @@
   text-align: left;
   padding: 10px 0;
 }
-
 
 @media (max-width: 1200px) {
   .table th:nth-child(4),
@@ -39,4 +37,24 @@
   .table td:nth-child(2) {
     display: none;
   }
+}
+
+.delete-button {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.select-checkbox {
+    margin-right: 10px;
+    vertical-align: middle;
 }

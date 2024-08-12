@@ -1,9 +1,9 @@
 .top-search-bar {
   position: fixed;
   top: 0;
-  left: 0px; /* Adjust based on the width of the side nav bar */
+  left: 0px;
   right: 0;
-  height: 50px; /* Adjust based on the desired height */
+  height: 50px;
   background-color: #f8f9fa;
   display: flex;
   align-items: center;
@@ -20,3 +20,21 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+
+.reset-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary color for the button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners for a modern look */
+    font-size: 14px; /* Font size to match other buttons */
+}
+
+    .reset-button:hover {
+        background-color: #0056b3;
+    }

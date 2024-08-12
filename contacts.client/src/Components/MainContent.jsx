@@ -5,6 +5,7 @@ import ContactDetails from './ContactDetails';
 const MainContent = ({ searchTerm }) => {
     const [contacts, setContacts] = useState([]);
     const [selectedContact, setSelectedContact] = useState(null);
+    const [selectedContacts, setSelectedContacts] = useState([]);
 
     useEffect(() => {
         populateContactData();
@@ -23,6 +24,25 @@ const MainContent = ({ searchTerm }) => {
         }
     };
 
+    const handleSelectContact = (contact) => {
+        setSelectedContacts(prevSelected => {
+            if (prevSelected.includes(contact)) {
+                return prevSelected.filter(c => c !== contact);
+            } else {
+                return [...prevSelected, contact];
+            }
+        });
+    };
+
+    const handleDeleteSelected = () => {
+        const confirmDelete = window.confirm('Are you sure you want to delete the selected contacts?');
+        if (confirmDelete) {
+            const remainingContacts = contacts.filter(contact => !selectedContacts.includes(contact));
+            setContacts(remainingContacts);
+            setSelectedContacts([]);
+        }
+    };
+
     const filteredContacts = searchTerm
         ? contacts.filter(contact =>
             contact.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -35,6 +55,11 @@ const MainContent = ({ searchTerm }) => {
 
     return (
         <div className="main-content">
+            {selectedContacts.length > 0 && (
+                <button className="delete-button" onClick={handleDeleteSelected}>
+                    Delete Selected
+                </button>
+            )}
             <table className="table table-striped" aria-labelledby="tableLabel">
                 <thead>
                     <tr>
@@ -46,11 +71,19 @@ const MainContent = ({ searchTerm }) => {
                 </thead>
                 <tbody>
                     {filteredContacts.map(contact => (
-                        <tr key={contact.email} onClick={() => setSelectedContact(contact)}>
-                            <td>{contact.name}</td>
-                            <td>{contact.phoneNumber}</td>
-                            <td>{contact.email}</td>
-                            <td>{contact.company}</td>
+                        <tr key={contact.email}>
+                            <td>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedContacts.includes(contact)}
+                                    onChange={() => handleSelectContact(contact)}
+                                    className="select-checkbox"
+                                />
+                                <span onClick={() => setSelectedContact(contact)}>{contact.name}</span>
+                            </td>
+                            <td onClick={() => setSelectedContact(contact)}>{contact.phoneNumber}</td>
+                            <td onClick={() => setSelectedContact(contact)}>{contact.email}</td>
+                            <td onClick={() => setSelectedContact(contact)}>{contact.company}</td>
                         </tr>
                     ))}
                 </tbody>
