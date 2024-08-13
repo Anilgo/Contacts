@@ -10,7 +10,6 @@ const ContactDetails = () => {
         navigate('/');
     };
 
-    // Fetch contact details using the id if needed
     const contact = {
         name: "John Doe",
         phoneNumber: "123-456-7890",

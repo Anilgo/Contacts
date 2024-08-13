@@ -33,7 +33,7 @@ namespace YourNamespace.Controllers
         };
 
         [HttpGet]
-        public ActionResult<IEnumerable<Contact>> Get()
+        public ActionResult<IEnumerable<Contact>> GetContacts()
         {
             return Ok(Contacts);
         }
@@ -44,5 +44,33 @@ namespace YourNamespace.Controllers
             Contacts.Add(contact);
             return Ok(contact);
         }
+        [HttpPut]
+        public IActionResult Put([FromBody] Contact contact)
+        {
+            var existingContact = Contacts.Find(c => c.Name == contact.Name);
+            if (existingContact == null)
+            {
+                return NotFound();
+            }
+            existingContact.PhoneNumber = contact.PhoneNumber;
+            existingContact.Email = contact.Email;
+            existingContact.Company = contact.Company;
+            return Ok(existingContact);
+        }
+  
+        [HttpDelete]
+        public IActionResult DeleteMany([FromBody] List<Contact> contacts)
+        {
+            foreach (var contact in contacts)
+            {
+                var existingContact = Contacts.Find(c => c.Name == contact.Name);
+                if (existingContact != null)
+                {
+                    Contacts.Remove(existingContact);
+                }
+            }
+            return Ok(contacts);
+        }
+
     }
 }

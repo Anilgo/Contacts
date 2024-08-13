@@ -1,6 +1,6 @@
 .main-content {
   margin-left: 220px;
-  margin-top: 50px; 
+  margin-top: 50px;
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -17,14 +17,16 @@
   text-align: left;
   padding: 10px 0;
 }
+
 .table tr:hover {
-  color:aqua;
+  color: aqua;
   cursor: pointer;
 }
 
 
 
 @media (max-width: 1200px) {
+
   .table th:nth-child(4),
   .table td:nth-child(4) {
     display: none;
@@ -32,6 +34,7 @@
 }
 
 @media (max-width: 992px) {
+
   .table th:nth-child(3),
   .table td:nth-child(3) {
     display: none;
@@ -39,28 +42,35 @@
 }
 
 @media (max-width: 768px) {
+
   .table th:nth-child(2),
   .table td:nth-child(2) {
     display: none;
   }
 }
 
+@media (max-width: 400px) {
+  .main-content {
+    margin-left: 115px;
+  }
+}
+
 .delete-button {
-    position: absolute;
-    right: 20px;
-    top: 100px;
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .delete-button:hover {
-    background-color: darkred;
+  background-color: darkred;
 }
 
 .select-checkbox {
-    margin-right: 10px;
-    vertical-align: middle;
+  margin-right: 10px;
+  vertical-align: middle;
 }

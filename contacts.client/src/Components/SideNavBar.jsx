@@ -5,9 +5,10 @@ const SideNavBar = () => {
   return (
     <div className="side-nav-bar">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#contacts">Contacts</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="/home">Contacts</a></li>
+        <li><a href="/create-contact">Create Contact</a></li>
+        <li><a href="#">empty</a></li>
+        <li><a href="#">empty</a></li>
       </ul>
     </div>
   );

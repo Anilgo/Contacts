@@ -34,12 +34,26 @@ const MainContent = ({ searchTerm }) => {
         });
     };
 
-    const handleDeleteSelected = () => {
+    const handleDeleteSelected = async () => {
         const confirmDelete = window.confirm('Are you sure you want to delete the selected contacts?');
         if (confirmDelete) {
-            const remainingContacts = contacts.filter(contact => !selectedContacts.includes(contact));
-            setContacts(remainingContacts);
-            setSelectedContacts([]);
+            try {
+                const response = await fetch('/api/contacts', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(selectedContacts),
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const remainingContacts = contacts.filter(contact => !selectedContacts.includes(contact));
+                setContacts(remainingContacts);
+                setSelectedContacts([]);
+            } catch (error) {
+                console.error('Failed to delete contacts:', error);
+            }
         }
     };
 
