@@ -58,7 +58,7 @@ const MainContent = ({ searchTerm }) => {
     };
 
     const handleContactClick = (contact) => {
-        navigate(`/contact/${contact.email}`);
+        navigate(`/contact/${contact.name}`, { state: { contact } });
     };
 
     const filteredContacts = searchTerm

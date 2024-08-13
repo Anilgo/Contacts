@@ -1,8 +1,6 @@
 .contact-details {
     margin-left: 220px;
-    /* Adjust based on the width of the side nav bar */
     margin-top: 70px;
-    /* Adjust based on the height of the top search bar */
     padding: 20px;
 }
 
@@ -37,6 +35,7 @@
 .contact-details form button:hover {
     background-color: #0056b3;
 }
+
 
 @media (max-width: 400px) {
     .contact-details {
