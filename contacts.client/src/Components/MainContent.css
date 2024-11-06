@@ -1,8 +1,10 @@
 .main-content {
+  display: flex;
   margin-left: 220px;
   margin-top: 50px;
   overflow-x: auto;
   overflow-y: auto;
+  flex-wrap: nowrap;
 }
 
 .table {
