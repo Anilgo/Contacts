@@ -41,7 +41,7 @@ export default defineConfig({
         }
     },
     server: {
-        historyApiFallback: true,
+        historyApiFallback: false,
         proxy: {
             '^/api/contacts': {
                 target,
