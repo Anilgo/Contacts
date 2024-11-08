@@ -56,15 +56,14 @@ const ContactDetails = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch('/api/contacts', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(contactToEdit)
         });
         if (response.ok) {
-            alert('Contact created successfully!');
-            //setContactToEdit({ name: '', phoneNumber: '', email: '', company: '' });
+            alert('Contact Saved successfully!');
         } else {
             alert('Failed to create contact.');
         }
