@@ -43,7 +43,7 @@ export default defineConfig({
     server: {
         historyApiFallback: false,
         proxy: {
-            '^': {
+            '^/api/contacts': {
                 target,
                 secure: false
             }
