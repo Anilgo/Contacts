@@ -9,6 +9,8 @@
     }
   },
   "profiles": {
+    
+    
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
@@ -40,6 +42,7 @@
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
       }
     }
+    
   }
 }
 

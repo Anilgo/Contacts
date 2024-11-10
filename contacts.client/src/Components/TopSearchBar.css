@@ -1,13 +1,14 @@
 .top-search-bar {
   position: fixed;
   top: 0;
-  left: 220px; /* Adjust based on the width of the side nav bar */
+  left: 0px;
   right: 0;
-  height: 70px; /* Adjust based on the desired height */
+  height: 50px;
   background-color: #f8f9fa;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
   padding: 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -15,8 +16,29 @@
 
 .top-search-bar input {
   width: 100%;
-  max-width: 600px;
+  max-width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  left: 200px;
+}
+
+
+.reset-button {
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  /* Primary color for the button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  /* Rounded corners for a modern look */
+  font-size: 14px;
+  /* Font size to match other buttons */
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
 }

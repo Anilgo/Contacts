@@ -1,16 +1,34 @@
 .main-content {
-  margin-left: 220px; /* Adjust based on the width of the side nav bar */
-  margin-top: 70px; /* Adjust based on the height of the top search bar */
-  padding: 20px;
-  overflow-x: auto;
+  display: flex;
+  margin-left: 220px;
+  margin-top: 50px;
+  overflow: auto;
+  table-layout: fixed;
+
 }
 
 .table {
-  width: 100%;
+  width: 80%;
+  height: 100%;
   table-layout: fixed;
+  border-spacing: 2px;
 }
 
+.table th {
+  font-weight: 1500;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.table tr:hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+
+
 @media (max-width: 1200px) {
+
   .table th:nth-child(4),
   .table td:nth-child(4) {
     display: none;
@@ -18,6 +36,7 @@
 }
 
 @media (max-width: 992px) {
+
   .table th:nth-child(3),
   .table td:nth-child(3) {
     display: none;
@@ -25,8 +44,35 @@
 }
 
 @media (max-width: 768px) {
+
   .table th:nth-child(2),
   .table td:nth-child(2) {
     display: none;
   }
+}
+
+@media (max-width: 400px) {
+  .main-content {
+    margin-left: 115px;
+  }
+}
+
+.delete-button {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.select-checkbox {
+  margin-right: 10px;
+  vertical-align: middle;
 }
