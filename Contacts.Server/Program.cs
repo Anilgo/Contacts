@@ -1,3 +1,5 @@
+using Contacts.Server.Services;
+
 namespace Contacts.Server
 {
     public class Program
@@ -11,6 +13,7 @@ namespace Contacts.Server
                 .AddNewtonsoftJson(options =>
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
                 );
+            builder.Services.AddScoped<IContactsService, ContactsService>();
 
             // Configure CORS
             builder.Services.AddCors(options =>

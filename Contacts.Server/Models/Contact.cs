@@ -1,4 +1,4 @@
-namespace YourNamespace.Models
+namespace Contacts.Server.Models
 {
     public class Contact
     {
