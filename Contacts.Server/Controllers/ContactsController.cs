@@ -19,7 +19,7 @@ namespace Contacts.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Contact>>> GetContacts()
         {
-            var result = _contactsService.GetContacts();
+            var result = await _contactsService.GetContacts();
             if (result is null)
                 return NotFound("No Contacts");
             return Ok(result);
@@ -28,7 +28,7 @@ namespace Contacts.Server.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateContact([FromBody] Contact contact)
         {
-            var result = _contactsService.CreateContact(contact);
+            var result = await _contactsService.CreateContact(contact);
             if (result is null)
                 return NotFound();
             return Ok();
@@ -37,7 +37,7 @@ namespace Contacts.Server.Controllers
         [HttpPut]
         public async Task<ActionResult> EditContact([FromBody] Contact contact)
         {
-            var result = _contactsService.EditContact(contact);
+            var result = await _contactsService.EditContact(contact);
             if (result is null)
                 NotFound(result);
             return Ok(result);
@@ -46,7 +46,7 @@ namespace Contacts.Server.Controllers
         [HttpDelete]
         public async Task<ActionResult> DeleteMany([FromBody] List<Contact> contacts)
         {
-            var result = _contactsService.DeleteContact(contacts);
+            var result = await _contactsService.DeleteContact(contacts);
             if (result is null)
                 return NotFound("No Contacts Deleted");
             return Ok(result);

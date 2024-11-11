@@ -5,8 +5,8 @@ namespace Contacts.Server.Services;
 
 public interface IContactsService
 {
-    public List<Contact> GetContacts();
-    public Contact CreateContact(Contact contact);
-    public Contact EditContact(Contact contact);
-    public List<Contact> DeleteContact(List<Contact> contacts);
+    public Task<List<Contact>> GetContacts();
+    public Task<Contact> CreateContact(Contact contact);
+    public Task<Contact> EditContact(Contact contact);
+    public Task<List<Contact>> DeleteContact(List<Contact> contacts);
 };
